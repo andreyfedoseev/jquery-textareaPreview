@@ -31,7 +31,7 @@ THE SOFTWARE.
     var settings = {
         "container" : null,
         "containerClass": "preview",
-        "updateFreq": 100,
+        "updateInterval": 100,
         "preprocess": null,
         "enabled": true
     };
@@ -55,7 +55,7 @@ THE SOFTWARE.
                     }
                     $this.data(PLUGIN_NAME, {
                         container: $container,
-                        updateFreq: options.updateFreq,
+                        updateInterval: options.updateInterval,
                         preprocess: options.preprocess,
                         textChanged: false
                     });
@@ -95,7 +95,7 @@ THE SOFTWARE.
                         data.textChanged = false;
                         $this.data(PLUGIN_NAME, data);
                     }
-                    setTimeout(update_preview, data.updateFreq);
+                    setTimeout(update_preview, data.updateInterval);
                 };
 
                 data.container.show();
