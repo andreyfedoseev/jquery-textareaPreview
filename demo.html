@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>jquery-textareaPreview Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="./jquery.textareaPreview.js"></script>
+    <script src="./showdown.js"></script>
+    <script>
+        $(function() {
+            $("#basic").textareaPreview();
+            var markdown = new Showdown.converter();
+            $("#markdown").textareaPreview({
+                preprocess: function(text) {
+                    return markdown.makeHtml(text);
+                }
+            });
+            var $disabled = $("#disabled").textareaPreview({
+                container: "#preview",
+                enabled: false
+            });
+            var $enable_checkbox = $("#enable-preview");
+            $enable_checkbox.change(function() {
+                if ($enable_checkbox.attr("checked")) {
+                    $disabled.textareaPreview("enable");
+                } else {
+                    $disabled.textareaPreview("disable");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Basic preview</h1>
+        <textarea id="basic" name="text" cols="50" rows="5">Type some <strong>HTML</strong> here</textarea>    
+    </div>
+    <div>
+        <h1>Preview with custom preprocess function (Markdown)</h1>
+        <textarea id="markdown" name="text" cols="50" rows="5">Type some **Markdown** here</textarea>    
+    </div>
+    <div>
+        <h1>Enable / disable preview</h1>
+        <textarea id="disabled" name="text" cols="50" rows="5">Preview for this textarea is disabled by default</textarea>    
+        <label for="enable-preview">
+          <input type="checkbox" id="enable-preview" />
+          Enable preview
+        </label>
+        <p id="preview"></p>
+    </div>
+</body>
+</html>
