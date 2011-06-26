@@ -43,9 +43,9 @@ Example:
         });
     </script>
     
-### `containerClass`  (default: `preview`)
+### `containerClass`  (default: `"preview"`)
 
-A CSS class which is added to preview panel. Note it's added only when the panel is created automatically (i.e. `container` option is `null`).
+A CSS class which is added to preview panel. Note it's added only if the panel created automatically (i.e. `container` option is `null`).
 
 Example:
 
@@ -63,7 +63,7 @@ This will add `<div class="myPreview"></div>` after the textarea which will be u
 
 ### `enabled` (default: `true`)
 
-Whether the preview is enabled when plugin is initialized.
+Whether the preview is enabled when the plugin is initialized.
 
 Example:
 
