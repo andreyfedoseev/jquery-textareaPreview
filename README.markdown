@@ -4,6 +4,9 @@ A jQuery plugin to add realtime preview panel to textareas, similar to StackOver
 It allows to create a basic editor with preview, for example in comment form.
 
 
+## [View demo](http://andreyfedoseev.github.com/jquery-textareaPreview/demo.html)
+
+
 ## Example usage
     
     <script src="jquery.textareaPreview.js"></script>
