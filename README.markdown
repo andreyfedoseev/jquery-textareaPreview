@@ -41,7 +41,7 @@ Example:
     <script>
         $(function() {
             $("textarea").textareaPreview({
-                container: #preview"    // or container: $("#preview)
+                container: "#preview"    // or container: $("#preview")
             });
         });
     </script>
