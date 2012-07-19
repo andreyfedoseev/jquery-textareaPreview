@@ -76,13 +76,13 @@ THE SOFTWARE.
                 $this.data(PLUGIN_NAME, data);
 
                 $this.bind("keyup." + PLUGIN_NAME, function() {
-                    var data = $this.data(PLUGIN_NAME, data);
+                    var data = $this.data(PLUGIN_NAME);
                     data.textChanged = true;
                     $this.data(PLUGIN_NAME, data);
                 });
 
                 var update_preview = function() {
-                    var data = $this.data(PLUGIN_NAME, data);
+                    var data = $this.data(PLUGIN_NAME);
                     if (!data.enabled) {
                         return;
                     }
